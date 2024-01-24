@@ -1,6 +1,6 @@
 package com.abc.fruit;
 
-import handling.*;
+import work.*;
 
 /**
  * Class Fruit
@@ -12,7 +12,7 @@ public class Fruit extends Produce{
     /**
      * Starts the internalThread
      */
-    public Fruit(String name, Handling visitor) {
+    public Fruit(String name, Identify visitor) {
         super(name, visitor);
         super.startThread();
     }

@@ -1,8 +1,8 @@
 package com.abc.fruit;
 
-import handling.*;
+import work.*;
 
 public abstract class Item {
 
-    public abstract void accepts(Handling visitor);
+    public abstract void accepts(Identify visitor);
 }

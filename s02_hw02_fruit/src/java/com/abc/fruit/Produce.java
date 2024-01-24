@@ -2,19 +2,19 @@ package com.abc.fruit;
 
 import java.util.*;
 
-import handling.*;
+import work.*;
 
 public class Produce extends Item implements Runnable {
 
     private Thread internalThread;
-    private final int MAX = 20;
+    private final int MAX = 25;
     private String name;
-    private Handling visitor;
+    private Identify visitor;
     private String pre;
     private boolean is_vowel;
     private Random rand;
 
-    public Produce(String name, Handling visitor){
+    public Produce(String name, Identify visitor){
         System.out.println("Inside " + name + "'s constructor");
         this.name = name;
         this.visitor = visitor;
@@ -39,7 +39,7 @@ public class Produce extends Item implements Runnable {
     }
     @SuppressWarnings("hiding")
     @Override
-    public void accepts(Handling visitor) {
+    public void accepts(Identify visitor) {
         visitor.visit(this);
     }
 

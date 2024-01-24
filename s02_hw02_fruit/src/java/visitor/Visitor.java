@@ -3,7 +3,7 @@ package visitor;
 import com.abc.fruit.*;
 
 public interface Visitor {
-    public abstract void visit(Produce item);
-    public abstract void visit(Fruit fruit);
-    public abstract void visit(Vegetable veg);
+    public void visit(Produce item);
+    public void visit(Fruit fruit);
+    public void visit(Vegetable veg);
 }

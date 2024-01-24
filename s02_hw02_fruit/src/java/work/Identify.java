@@ -1,10 +1,10 @@
-package handling;
+package work;
 
 import com.abc.fruit.*;
 
 import visitor.*;
 
-public class Handling implements Visitor{
+public class Identify implements Visitor{
 
     @Override
     public void visit(Fruit fruit) {

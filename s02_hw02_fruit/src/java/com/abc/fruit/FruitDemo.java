@@ -2,7 +2,7 @@ package com.abc.fruit;
 
 import java.util.*;
 
-import handling.*;
+import work.*;
 
 
 /**
@@ -11,12 +11,12 @@ import handling.*;
  * Creates multiple instances of items
  * Uses visitor for work
  */
-public class FruitDemo {
+public class FruitDemo implements Runnable{
 
     public static void main(String[] args) {
 
     ArrayList<Produce> produce_ar = new ArrayList<>();
-    Handling visitor = new Handling();
+    Identify visitor = new Identify();
     String fruits[] = {"apple", "orange", "watermelon", "lemon", "cherry"};
     String fruits2[] = {"banana", "grape"};
     String vegie[] = {"brocoli", "celery"};
@@ -36,5 +36,9 @@ public class FruitDemo {
             produce_ar.add(new Fruit(fruit, visitor));
         }
         System.out.println("Finished creating all fruits2");
+    }
+
+    @Override
+    public void run() {
     }
 }
