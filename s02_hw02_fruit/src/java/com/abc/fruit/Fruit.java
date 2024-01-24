@@ -1,5 +1,20 @@
-package s02_hw02_fruit;
+package com.abc.fruit;
 
-public class Fruit {
+import handling.*;
+
+/**
+ * Class Fruit
+ * Self running class
+ * Prints what it is N times
+ */
+public class Fruit extends Produce{
+
+    /**
+     * Starts the internalThread
+     */
+    public Fruit(String name, Handling visitor) {
+        super(name, visitor);
+        super.startThread();
+    }
 
 }

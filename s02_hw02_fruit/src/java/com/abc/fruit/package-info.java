@@ -1,1 +1,1 @@
-package s02_hw02_fruit;
+package com.abc.fruit;
