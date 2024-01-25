@@ -4,7 +4,7 @@ import java.util.*;
 
 import work.*;
 
-public class Produce extends Item implements Runnable {
+public class Produce extends Item {
 
     private Thread internalThread;
     private final int MAX = 25;
@@ -20,20 +20,20 @@ public class Produce extends Item implements Runnable {
         this.visitor = visitor;
         rand = new Random();
         is_vowel = isVowel(name);
-        internalThread = new Thread(this);
+        internalThread = new Thread(this::runWork);
+        internalThread.start();
     }
 
     @Override
-    public void run() {
+    protected void runWork() {
         for(int index = 0; index < MAX; index++) {
             try {
                 setPre(index);
                 accepts(visitor);
-                Thread.sleep((index + 1) * (rand.nextInt(100) + 1));
+                Thread.sleep((index + 1) * (rand.nextInt(10) + 1));
             }
             catch (Exception e) {
-                System.out.println("Exception inside " + name + " thread!");
-                e.printStackTrace();
+               // ignore and let thread die
             }
         }
     }
@@ -91,12 +91,5 @@ public class Produce extends Item implements Runnable {
 
     public String getName() {
         return name;
-    }
-
-    /**
-     * getInternalThread()
-     */
-    public void startThread() {
-        internalThread.start();
     }
 }

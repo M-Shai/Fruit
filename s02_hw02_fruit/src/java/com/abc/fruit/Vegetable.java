@@ -6,6 +6,5 @@ public class Vegetable extends Produce{
 
     public Vegetable(String name, Identify visitor) {
         super(name, visitor);
-        super.startThread();
     }
 }

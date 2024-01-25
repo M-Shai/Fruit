@@ -14,7 +14,6 @@ public class Fruit extends Produce{
      */
     public Fruit(String name, Identify visitor) {
         super(name, visitor);
-        super.startThread();
     }
 
 }

@@ -4,5 +4,7 @@ import work.*;
 
 public abstract class Item {
 
-    public abstract void accepts(Identify visitor);
+    protected abstract void accepts(Identify visitor);
+
+    protected abstract void runWork();
 }
